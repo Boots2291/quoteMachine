@@ -16,7 +16,7 @@ $(document).ready(function() {
 
       //$("#quote").html(quote)
 
-     $.get("https://api.forismatic.com/api/1.0/", function(json) { 
+     $.getJSON("https://got-quotes.herokuapp.com/quotes", function(json) { 
         console.log(json);
     });
     changeColor();
