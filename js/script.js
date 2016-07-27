@@ -18,6 +18,8 @@ $(document).ready(function() {
 
      $.getJSON("https://got-quotes.herokuapp.com/quotes", function(json) { 
         console.log(json);
+        quote = json.quote;
+        $('#quote').html(quote);
     });
     changeColor();
   });
