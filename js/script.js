@@ -10,7 +10,7 @@ $(document).ready(function() {
 
   $("#getQuote").on("click", function() {
 
-    $.getJSON("http://api.adviceslip.com/advice", function(json) {
+    $.getJSON("https://api.adviceslip.com/advice", function(json) {
 
       quote = json.slip.advice;
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
   $('#tweet').on("click", function() {
     if (quote) {
 
-      var tweet = "http://twitter.com/intent/tweet?text=" + quote;
+      var tweet = "https://twitter.com/intent/tweet?text=" + quote;
       $('#tweet').attr("href", tweet);
 
     }
