@@ -10,12 +10,14 @@ $(document).ready(function() {
 
   $("#getQuote").on("click", function() {
 
-    $.getJSON("https://api.adviceslip.com/advice", function(json) {
+    //$.getJSON("http://api.adviceslip.com/advice", function(json) {
 
-      quote = json.slip.advice;
+      //quote = json.slip.advice;                 ********these three lines are for advice slip********
 
-      $("#quote").html(quote)
+      //$("#quote").html(quote)
 
+     $.get("http://api.forismatic.com/api/1.0/", function(json) { 
+        console.log(json);
     });
     changeColor();
   });
@@ -23,7 +25,7 @@ $(document).ready(function() {
   $('#tweet').on("click", function() {
     if (quote) {
 
-      var tweet = "https://twitter.com/intent/tweet?text=" + quote;
+      var tweet = "http://twitter.com/intent/tweet?text=" + quote;
       $('#tweet').attr("href", tweet);
 
     }
