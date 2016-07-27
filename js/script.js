@@ -5,21 +5,17 @@ function changeColor() {
 }
 
 var quote = "";
+var character = "";
 
 $(document).ready(function() {
 
   $("#getQuote").on("click", function() {
 
-    //$.getJSON("http://api.adviceslip.com/advice", function(json) {
-
-      //quote = json.slip.advice;                 ********these three lines are for advice slip********
-
-      //$("#quote").html(quote)
-
      $.getJSON("https://got-quotes.herokuapp.com/quotes", function(json) { 
         console.log(json);
         quote = json.quote;
-        $('#quote').html(quote);
+        character = json.character;
+        $('#quote').html(quote + '<br>' + character);
     });
     changeColor();
   });
