@@ -16,7 +16,7 @@ $(document).ready(function() {
 
       //$("#quote").html(quote)
 
-     $.get("http://api.forismatic.com/api/1.0/", function(json) { 
+     $.get("https://api.forismatic.com/api/1.0/", function(json) { 
         console.log(json);
     });
     changeColor();
