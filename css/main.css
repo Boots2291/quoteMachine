@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   color: white;
+  font-family: 'Marck Script', cursive;
 }
 #quote {
   border: 1px solid black;
@@ -17,16 +18,16 @@ body {
 #buttons {
   border: 1px solid black;
   
+  text-decoration: none;
+  font-family: 'Marck Script', cursive;
   margin: 0 auto 0 auto;
   max-width: 680px;
   text-align: center;
+
 }
 .button {
+  color: inherit;
   background: none;
-  border: none;
-  font-size: 1em;
-  color: blue;
   text-decoration: none;
-  font-family: Helvetica;
   padding: 0 20px;
 }

@@ -5,6 +5,7 @@
 // }
 
 var quote = "";
+var tweetQuote = "";
 var character = "";
 
 $(document).ready(function() {
@@ -15,6 +16,7 @@ $(document).ready(function() {
         console.log(json);
         quote = json.quote;
         character = json.character;
+        tweetQuote = quote.substring(0, 136) + '...';
         $('#quote').html(quote + '<br><br>' + character);
     });
     // changeColor();
