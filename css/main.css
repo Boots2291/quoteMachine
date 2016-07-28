@@ -1,5 +1,5 @@
 body {
-  background: url("quoteMachine/images/background.jpg");
+  background-image: url("quoteMachine/images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat; 
   margin: 0;
@@ -10,7 +10,7 @@ body {
   border: 1px solid black;
   
   max-width: 680px;
-  height: 75px;
+  height: 100px;
   margin: 2rem auto 0 auto;
   text-align: center;
 }
