@@ -16,7 +16,7 @@ $(document).ready(function() {
         console.log(json);
         quote = json.quote;
         character = json.character;
-        tweetQuote = quote.substring(0, 136) + '...';
+        tweetQuote = jQuery.trim(quote).substring(0, 136).join('...');
         $('#quote').html(quote + '<br><br>' + character);
     });
     // changeColor();
