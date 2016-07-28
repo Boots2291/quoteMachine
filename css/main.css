@@ -42,6 +42,7 @@ body {
 .button:hover {
   color: black;
   background-color: #a6a6a6;
+  cursor: pointer;
 }
 #image img {
   padding: 0;
