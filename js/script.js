@@ -3,33 +3,71 @@
 //     selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
 //   $('body').css('backgroundColor', selectBG);
 // }
-
 var quote = "";
 var character = "";
 
-$(document).ready(function() {
 
-  $("#getQuote").on("click", function() {
+function changeColor() {
+  switch (character) {
+    case "Tyrion":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    case "Cersei Lannister":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    case "Bran":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    case "Sansa":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    case "Daenerys":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    case "Samwell":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    case "Cersei and Tyrion":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    case "Jaime Lannister":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    case "Jon Snow":
+      $('body').css('backgroundColor', 'yellow');
+      break;
+    default:
+      $('body').css('backgroundColor', 'black');
+  }
+}
 
-     $.getJSON("https://got-quotes.herokuapp.com/quotes", function(json) { 
-        console.log(json);
+function quoteGenerate(json) {
+    $.getJSON("https://got-quotes.herokuapp.com/quotes", function(json) {
+        // console.log(json);
         quote = json.quote;
         character = json.character;
-        $('#quote').html(quote + '<br><br>' + character);
+
+        if (character === "Tyrion" || character === "Sansa" || character === "Cersei Lannister" || character === "Bran" || character === "Daenerys" || character === "Samwell" || character === "Cersei and Tyrion" || character === "Jaime Lannister" || character === "Jon Snow") {
+            if (quote.length < 140) {
+                $('#quote').html(quote + '<br><br>' + character);
+                changeColor();
+            } else {
+                quoteGenerate();
+            }
+        } else {
+            quoteGenerate();
+        }
     });
-    // changeColor();
-  });
+};
 
-  $('#tweet').on("click", function() {
-    if (quote) {
-
-      var tweet = "http://twitter.com/intent/tweet?text=" + quote;
-      $('#tweet').attr("href", tweet);
-
-    }
-
-    $("#tweet").attr("target", "");
-
-  });
-
+$(document).ready(function() {
+    quoteGenerate();
+    $("#getQuote").on("click", quoteGenerate); //{
+    $('#tweet').on("click", function() {
+        if (quote) {
+            var tweet = "http://twitter.com/intent/tweet?text=" + quote;
+            $('#tweet').attr("href", tweet);
+        }
+        $("#tweet").attr("target", "");
+    });
 });
